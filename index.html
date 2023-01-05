@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> 
+   
+    *{
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    ul {
+        height: 90vh;
+        width: 90vw;
+        border: solid 10px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        
+    }
+    #child{
+        width: 100px;
+        height: 25px;
+        border: 2px solid;
+        list-style: none;
+        margin-top: 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+    
+            <ul class="has-children">
+               
+            </ul>
+    <script>
+        var ul=document.getElementsByClassName("has-children")[0];
+        for(let i=0;i<17;i++){
+            var li = document.createElement("li");
+            var t = document.createTextNode(`${i+1} child `)
+            li.appendChild(t);
+        ul.appendChild(li)
+        var att = document.createAttribute("id")
+        att.value="child"
+        document.getElementsByTagName("li")[i].setAttributeNode(att);
+        if(i%2!==0){
+            document.getElementsByTagName("li")[i].style.backgroundColor="lime";
+        }
+        else if(i==0){
+            document.getElementsByTagName("li")[i].style.backgroundColor="blue";
+        }
+        else if(i==16){
+            document.getElementsByTagName("li")[i].style.backgroundColor="palevioletred ";
+        }
+        else if(i===8) {
+            document.getElementsByTagName("li")[i].style.backgroundColor="green";
+        }
+    }
+    </script>
+</body>
+</html>
